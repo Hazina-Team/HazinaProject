@@ -97,7 +97,7 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html"> <img alt="image" src="{{ url('public/assets/img/hazinalogo.png')}}" class="header-logo" /> <span
+            <a href="{{  url('admin/dashboard')}}"> <img alt="image" src="{{ url('public/assets/img/hazinalogo.png')}}" class="header-logo" /> <span
                 class="logo-name" style="font-size: 9px;">OFISI YA MSAJILI WA HAZINA</span>
             </a>
           </div>

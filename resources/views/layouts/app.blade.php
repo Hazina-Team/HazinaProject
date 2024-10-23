@@ -23,6 +23,49 @@
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="{{ url('public/assets/css/custom.css')}}">
   
+  <style>
+      .banner-img img {
+    width: 100%;
+    height: 100px; /* Set the desired height */
+    object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+    border-radius: 8px; /* Optional: Adds rounded corners to the image */
+  }
+
+
+  .responsive-heading {
+    font-size: 2rem; /* Default font size for large screens */
+  }
+
+  @media (max-width: 1200px) {
+    .responsive-heading {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .responsive-heading {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .responsive-heading {
+      font-size: 1.75rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .responsive-heading {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .responsive-heading {
+      font-size: 1.25rem;
+    }
+  }
+  </style>
   <!-- Favicon -->
   <link rel='shortcut icon' type='image/x-icon' href="{{ url('public/assets/img/logo.jpeg')}}">
   @yield('style')

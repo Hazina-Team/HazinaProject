@@ -28,7 +28,7 @@
                                 <div class="form-group">
                                     <label for="">LUGHA<span style="color: red;">*</span></label>
                                     <select name="vistion" id="vistion"  required class="form-control">
-                                        <option>--select gender--</option>
+                                        <option>--Chagua Lugha--</option>
                                         <option {{ (old('vistion') == 'English') ? 'selected' : '' }} value="English">English</option>
                                         <option {{ (old('vistion') == 'Kiswahili') ? 'selected' : '' }} value="Kiswahili">Kiswahili</option>
 

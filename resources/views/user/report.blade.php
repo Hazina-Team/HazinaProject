@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="asset/img/apple-icon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="{{ url('public/assets/img/hazinalogo.png')}}">
   <title>{{ !empty($header_title) ? $header_title : '' }} - Ofisi ya Msajili wa Hazina</title>
  <!--     Fonts and icons     -->
@@ -20,9 +20,26 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="{{ url('public/asset/css/material-dashboard.css?v=3.1.0')}}" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  <style>
+        .bordered-input {
+        border: 1px ; /* Change color as needed */
+        border-radius: 15px; /* Optional: for rounded corners */
+        outline: none; /* Removes the default outline */
+    }
+    .bordered-input:focus {
+        border-color: #0056b3; /* Change color on focus */
+    }
+
+    @media (max-width: 576px) {
+        .table-responsive {
+            overflow-x: auto; /* Ensure horizontal scrolling on small screens */
+        }
+    }
+  </style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -36,7 +53,7 @@
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
             <li class="breadcrumb-item text-sm text-dark active" aria-current="page">RIPOTI</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0"><a href="{{ url('dashboard')}}">DASHIBODI</a></h6>
+          <h6 class="font-weight-bolder mb-0 mt-4"><a href="{{ url('dashboard')}}">RUDI KWA DASHIBODI</a></h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -144,56 +161,90 @@
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
-      <div class="row">
+    <div class="row">
         <div class="col-12">
-          <div class="card my-4">
-            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-              <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">IDADI YA RIPOTI</h6>
-              </div>
-            </div>
-            <div class="card-body px-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="text-align: center;">S/N</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">JINA LA REPORT</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">AINA</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">MWAKA</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">ACTION</th>
-                      <th class="text-secondary opacity-7"></th>
-                    </tr>
-                  </thead>
-                  @foreach($getRecord as $value)
-    <tr>
-    <td style="text-align: center;">{{ $loop->iteration }}</td>
-      <td>{{ $value->name }}</td>
-      <td>{{ $value->vistion }}</td>
-      <td style="text-align: center;">{{ $value->mwaka }}</td>
-      
-      <td style="text-align: center;">
-      <a href="{{ asset('document/' . $value->document) }}"><button class="btn btn-success" type="button"><i class="nav-icon fas fa-save"></i></button></a>
-        </a>
+            <div class="card my-4">
+                <!-- Card Header -->
+                <div class="card-header bg-gradient-success shadow-primary border-radius-lg pt-2 pb-1">
+                    <h6 class="text-white text-capitalize ps-3">LISTI ZA RIPOTI</h6>
+                </div>
 
-</td>
-      
-    </tr>
-  @endforeach
-                  <tbody>
+                <!-- Card Body -->
+                <div class="card-body px-0 pb-2">
+                    <!-- Search Field -->
+                    <div class="mb-3 d-flex justify-content-end">
+                        <input type="text" id="searchInput" class="form-control me-2 bordered-input" placeholder="Search..." aria-label="Search" style="width: auto;">
+                        <button class="btn btn-success btn-sm tafuta-button mx-3" type="button">Tafuta</button>
+                    </div>
+                    <div class="container-fluid">
+                    <div class="table-responsive table-bordered p-0" style="overflow-x:auto;">
+                        <table class="table align-items-center mb-0 table-striped table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">S/N</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Jina la Sheria</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aina</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Mwaka</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($getRecord as $value)
+                                    <tr>
+                                        <td class="text-center">{{ $loop->iteration }}</td>
+                                        <td>{{ $value->name }}</td>
+                                        <td>{{ $value->vistion }}</td>
+                                        <td class="text-center">{{ $value->mwaka }}</td>
+                                        <td class="text-center">
+                                            <a href="{{ asset('document/' . $value->document) }}" class="btn btn-success btn-sm" type="button">
+                                                <i class="nav-icon fas fa-download"></i> PAKUA
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
 
-                  </tbody>
-                </table>
-              </div>
-              <div style="padding: 10px; float: right;">
-              {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
-</div>
-            </div>
-          </div>
+                        <!-- Pagination -->
+                        <div class="d-flex justify-content-end mt-3">
+                            {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links('pagination::bootstrap-4') !!}
+                        </div>
+
+                    </div> <!-- End of table-responsive -->
+                    </div>
+                </div> <!-- End of card-body -->
+            </div> <!-- End of card -->
+        </div> <!-- End of col -->
+    </div> <!-- End of row -->
+</div> <!-- End of container-fluid -->
+      
+      <footer class="footer py-4 mt-auto" style="clear: both;">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <!-- Full width on small devices, half width on larger devices -->
+      <div class="col-lg-6 col-12 mb-lg-0 mb-4">
+        <div class="copyright text-center text-sm text-muted text-lg-start">
+          © copyright
+          <a href="#" class="font-weight-bold" target="_blank">IT INTERNSHIP - {{ date('Y') }} -2024</a>
+          All Rights Reserved
         </div>
       </div>
-      
-      @extends('layouts.serbar')
+      <div class="col-lg-6 col-12">
+        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+          <li class="nav-item">
+            <a href="https://www.trosmz.go.tz" class="nav-link text-muted" target="_blank">www.trosmz.go.tz</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.mail.trosmz.go.tz" class="nav-link text-muted" target="_blank">info@trosmz.go.tz</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.zgamis.trosmz.go.tz/" class="nav-link text-muted" target="_blank">ZGAMIS</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
     </div>
   </main>
   <div class="fixed-plugin">

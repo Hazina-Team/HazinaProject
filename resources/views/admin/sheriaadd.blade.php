@@ -12,7 +12,7 @@
                 <form action="" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <div class="card-header">
-                      <h4>SAJILI WATUMIAJI</h4>
+                      <h4>SAJILI SHERIA</h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -28,7 +28,7 @@
                                 <div class="form-group">
                                     <label for="">LUGHA<span style="color: red;">*</span></label>
                                     <select name="vistion" id="vistion"  required class="form-control">
-                                        <option>--select gender--</option>
+                                        <option>--Chagua Lugha--</option>
                                         <option {{ (old('vistion') == 'English') ? 'selected' : '' }} value="English">English</option>
                                         <option {{ (old('vistion') == 'Kiswahili') ? 'selected' : '' }} value="Kiswahili">Kiswahili</option>
 

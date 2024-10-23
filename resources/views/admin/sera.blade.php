@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Sheria </h1>
+            <h1 class="responsive-heading">Sera </h1>
           </div>
           <div class="col-sm-6" style="text-align: right;">
            <a href="{{ url('admin/seraaadd')}}" class="btn btn-primary">WASILISHA SERA</a>
@@ -24,7 +24,7 @@
               @include('_massage')
                 <div class="card">
                   <div class="card-header">
-                    <h4>Sera</h4>
+                    <h4>IDADI YA SERA: {{ $getRecord->total() }}</h4>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -63,9 +63,7 @@
                         
                       </table>
                     </div>
-                    <div style="padding: 10px; float: right;">
-              {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
-</div>
+                   
                   </div>
                 </div>
               </div>

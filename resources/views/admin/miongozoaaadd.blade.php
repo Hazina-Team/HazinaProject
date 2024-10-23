@@ -28,7 +28,7 @@
                                 <div class="form-group">
                                     <label for="">AINA<span style="color: red;">*</span></label>
                                     <select name="vistion" id="vistion"  required class="form-control">
-                                        <option>--select gender--</option>
+                                        <option>--Chagua Aina--</option>
                                         <option {{ (old('vistion') == 'UMMA') ? 'selected' : '' }} value="UMMA">UMMA</option>
                                         <option {{ (old('vistion') == 'MALI') ? 'selected' : '' }} value="MALI">MALI</option>
 

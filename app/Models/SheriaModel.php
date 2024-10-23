@@ -23,7 +23,7 @@ class SheriaModel extends Model
     {
         $return = SheriaModel::select('sheria.*')
             ->where('is_delete', '=', 0)
-            ->paginate(20);  
+            ->paginate(10);  
             return $return;
     }
     static public function getSingle($id)

@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>WATUMIAJI</h1>
+          <h1 class="responsive-heading">WATUMIAJI</h1>
           </div>
           <div class="col-sm-6" style="text-align: right;">
            <a href="{{ url('admin/admin/add')}}" class="btn btn-primary">SAJILI WATUMIAJI </a>
@@ -36,9 +36,9 @@
             <th>Fullname</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Address</th>
+            <!-- <th>Address</th>
             <th>Gender</th>
-            <th>Age</th>
+            <th>Age</th> -->
             <th>Status</th>
             <th>Created Date</th>
             <th>Action</th>
@@ -56,24 +56,29 @@
             <td>{{ $value->name}}</td>
             <td>{{ $value->email}}</td>
             <td>{{ $value->phone}}</td>
-            <td>{{ $value->address}}</td>
+            <!-- <td>{{ $value->address}}</td>
             <td>{{ $value->gender}}</td>
-            <td>{{ $value->age}}</td>
+            <td>{{ $value->age}}</td> -->
             <td>{{ ($value->status == 0) ? 'Active' : 'Inactive'}}</td>
             <td>{{ date('d-m-Y H:i A', strtotime($value->created_at))}}</td>
             <td>
-                <a href="{{ url('admin/admin/edit/'.$value->id)}}" class="btn btn-primary"><i class="nav-icon fas fa-pen"></i></a>
-                <a href="{{ url('admin/admin/delete/'.$value->id)}}" class="btn btn-danger mt-3"><i class="nav-icon fas fa-trash"></i></a>
-            </td>
+              <div class="d-flex gap-2">
+                  <a href="{{ url('admin/admin/edit/'.$value->id)}}" class="btn btn-success">
+                      <i class="nav-icon fas fa-pen"></i>
+                  </a>
+                  <a href="{{ url('admin/admin/delete/'.$value->id)}}" class="btn btn-danger mx-3">
+                      <i class="nav-icon fas fa-trash"></i>
+                  </a>
+              </div>
+          </td>
+
         </tr> <!-- Closed the <tr> tag here -->
         @endforeach
     </tbody>
 </table>
 
                     </div>
-                    <div style="padding: 10px; float: right;">
-              {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
-</div>
+
                   </div>
                 </div>
               </div>
