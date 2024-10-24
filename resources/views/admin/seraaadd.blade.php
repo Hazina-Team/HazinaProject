@@ -12,7 +12,7 @@
                 <form action="" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <div class="card-header">
-                      <h4>SAJILI SERA   </h4>
+                      <h4>SAJILI SERA</h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
