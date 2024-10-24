@@ -10,6 +10,8 @@ use App\Http\Controllers\kanuniController;
 use App\Http\Controllers\miongozoController;
 use App\Http\Controllers\reportController;
 use App\Http\Controllers\userallController;
+use App\Http\Controllers\TaasisiController;
+
 
 
 
@@ -86,6 +88,16 @@ Route::get('admin/sera', [SeraController::class, 'list']);
     Route::get('admin/reportaaadd', [reportController::class, 'add']);
     Route::post('admin/reportaaadd', [reportController::class, 'insert']);
     Route::get(' admin/report/delete/{id}', [reportController::class, 'delete']);
+
+
+    // tasisi
+    Route::get('admin/taasisi', [TaasisiController::class, 'list']);
+    Route::get('admin/taasisiaadd', [TaasisiController::class, 'add']);
+    Route::post('admin/taasisiaadd', [TaasisiController::class, 'insert']);
+    Route::get(' admin/taasisi/{id}', [TaasisiController::class, 'delete']);
+    Route::get('admin/taasisiajili/{id}', [TaasisiController::class, 'edit']);
+    Route::post('admin/taasisiajili/{id}', [TaasisiController::class, 'update']);
+    
     });
 
     // user

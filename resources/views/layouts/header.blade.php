@@ -135,7 +135,7 @@
             </li>
 
             <li class="dropdown">
-              <a href="{{  url('admin/mashirika')}}" class="nav-link @if(Request::segment(2) == 'mashirika')  active @endif"><i data-feather="shield"></i><span>Taasisi za Umma</span></a>
+              <a href="{{  url('admin/taasisi')}}" class="nav-link @if(Request::segment(2) == 'taasisi')  active @endif"><i data-feather="shield"></i><span>Taasisi Za Uwekezaji Za Umma </span></a>
             </li>
            
             @endif

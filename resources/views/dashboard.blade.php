@@ -200,12 +200,12 @@
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
               <div class="hazina shadow-dark border-radius-lg py-3 pe-1">
                 <div class="chart">
-                <p class="text-center  mt-5 mb-5 text-dark" style="font-size: 1.5rem;font-weight: bold">IDADI YA TAASISI ZA UMMA<br></p>      
+                <p class="text-center  mt-5 mb-5 text-dark" style="font-size: 1.5rem;font-weight: bold">TAASISI ZA UWEKEZAJI ZA UMMA<br></p>      
                 </div>
               </div>
             </div>
             <div class="card-body">
-            <h6 class="mb-0" style="font-size: 2rem; text-align: center;">TAASISI ZA UMMA</h6>
+            <h6 class="mb-0" style="font-size: 2rem; text-align: center;">TAASISI ZA UWEKEZAJI ZA UMMA</h6>
               <hr class="dark horizontal">
               <div class="d-flex ">
                

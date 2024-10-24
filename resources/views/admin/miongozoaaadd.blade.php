@@ -29,8 +29,8 @@
                                     <label for="">AINA<span style="color: red;">*</span></label>
                                     <select name="vistion" id="vistion"  required class="form-control">
                                         <option>--Chagua Aina--</option>
-                                        <option {{ (old('vistion') == 'UMMA') ? 'selected' : '' }} value="UMMA">UMMA</option>
-                                        <option {{ (old('vistion') == 'MALI') ? 'selected' : '' }} value="MALI">MALI</option>
+                                        <option {{ (old('vistion') == 'MITAJI YA UMMA NA UWEKEZAJI') ? 'selected' : '' }} value="MITAJI YA UMMA NA UWEKEZAJI">MITAJI YA UMMA NA UWEKEZAJI</option>
+                                        <option {{ (old('vistion') == 'USIMAMIZI NA USAJILI WA MALI ZA UMMA') ? 'selected' : '' }} value="USIMAMIZI NA USAJILI WA MALI ZA UMMA">USIMAMIZI NA USAJILI WA MALI ZA UMMA</option>
 
                                     </select>
                                     <div style="color:red">{{ $errors->first('vistion')}}</div>
