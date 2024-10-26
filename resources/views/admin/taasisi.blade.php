@@ -73,10 +73,10 @@
       
       <td>
      
-      <a href="{{ url('admin/taasisiajili/'.$value->id)}}" class="btn btn-success">
+      <a href="{{ url('admin/taasisiajili/'.$value->id)}}" class="btn btn-success mx-3">
                       <i class="nav-icon fas fa-pen"></i>
                   </a>
-                  <a href="{{ url('admin/taasisi/'.$value->id)}}" class="btn btn-danger mx-3">
+                  <a href="{{ url('admin/taasisi/'.$value->id)}}" class="btn btn-danger mx-3 mt-3">
                       <i class="nav-icon fas fa-trash"></i>
                   </a>
 
