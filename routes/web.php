@@ -102,12 +102,18 @@ Route::get('admin/sera', [SeraController::class, 'list']);
 
     // user
     Route::get('user/sheria', [userallController::class, 'list']);
+    Route::get('user/taasisizaumma', [userallController::class, 'taasisi']);
+
     Route::get('user/sera', [userallController::class, 'sera']);
     Route::get('user/kanuni', [userallController::class, 'kanuni']);
     Route::get('user/miongozo', [userallController::class, 'miongozo']);
     Route::get('user/report', [userallController::class, 'report']);
+    Route::get('user/taasisizote/{id}', [userallController::class, 'marekebisho']);
+
+
     Route::get('/', [userallController::class, 'dashboard']);
     Route::get('dashboard', [userallController::class, 'dashboard']);
+    
 
 
 

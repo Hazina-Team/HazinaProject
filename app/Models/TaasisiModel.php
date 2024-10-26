@@ -21,6 +21,13 @@ class TaasisiModel extends Model
             ->paginate(10);  
             return $return;
     }
+    static function getTotalTaasisi() 
+    {
+        return TaasisiModel::select('taasisi_za_umma.*')
+        ->where('is_delete','=',0)
+        ->count();  
+        
+    }
 
     public function getProfile() 
     {

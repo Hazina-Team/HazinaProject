@@ -8,6 +8,8 @@ use App\Models\SeraModel;
 use App\Models\KanuniModel;
 use App\Models\miongozoModel;
 use App\Models\reportModel;
+use App\Models\TaasisiModel;
+
 
 
 
@@ -54,6 +56,27 @@ class userallController extends Controller
         return view('user.report', $data);
    }
 
+   public function taasisi()
+    {
+        $data['getRecord'] = TaasisiModel::getTaasisi();
+        $data['header_title'] = "Idadi Ya Taasisi Za Uwekezaji Za Umma";
+        return view('user.taasisizaumma', $data);
+   }
+
+   public function marekebisho($id) 
+     {
+                $data['getRecord'] = TaasisiModel::getSingle($id);
+                if(!empty($data['getRecord'])){
+                    $data['header_title'] = "TAASISI ZA UWEKEZAJI ZA UMMA";
+                    return view('user.taasisizote', $data);
+                }
+                    else {
+                    abort(404);
+                    }
+    }
+
+   
+
    public function dashboard() {
     $data['header_title'] = "DASHIBODI";
     $data['TotalSheria'] = SheriaModel::getTotalSheria();
@@ -61,6 +84,8 @@ class userallController extends Controller
     $data['Totalkanuni'] = KanuniModel::getTotalKanuni();
     $data['Totalmiongozo'] = miongozoModel::getTotalmiongozo();
     $data['Totalripoti'] = reportModel::getTotalreport();
+    $data['TotalTaasisi'] = TaasisiModel::getTotalTaasisi();
+
        return view('dashboard', $data);
    } 
 }

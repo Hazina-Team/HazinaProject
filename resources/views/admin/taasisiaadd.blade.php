@@ -32,6 +32,7 @@
                                         <option {{ (old('aina_ya_tasisi') == 'MASHIRIKA') ? 'selected' : '' }} value="MASHIRIKA">MASHIRIKA</option>
                                         <option {{ (old('aina_ya_tasisi') == 'KAMPUNI') ? 'selected' : '' }} value="KAMPUNI">KAMPUNI</option>
                                         <option {{ (old('aina_ya_tasisi') == 'MAMLAKA') ? 'selected' : '' }} value="MAMLAKA">MAMLAKA</option>
+                                        <option {{ (old('aina_ya_tasisi') == 'MIFUKO') ? 'selected' : '' }} value="MIFUKO">MIFUKO</option>
 
                                     </select>
                                     <div style="color:red">{{ $errors->first('aina_ya_tasisi')}}</div>
